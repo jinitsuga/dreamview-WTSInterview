@@ -10,9 +10,12 @@ export default function Carousel({ topMovies }: CarouselProps) {
   const [shownSlide, setShownSlide] = useState<number>(2);
 
   const imgsUrl = import.meta.env.VITE_IMG_URL;
-  console.log(topMovies);
+
   const slides = topMovies.map((movie, id) => (
     <Slide
+      currentSlide={shownSlide}
+      setSlide={setShownSlide}
+      slideQty={topMovies.length}
       key={id}
       title={movie.title}
       description={movie.overview}

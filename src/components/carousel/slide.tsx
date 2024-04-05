@@ -1,3 +1,4 @@
+import { SetStateAction, Dispatch } from "react";
 import Score from "./score";
 
 type SlideTypes = {
@@ -6,6 +7,9 @@ type SlideTypes = {
   description: string;
   posterUrl?: string;
   score: number;
+  currentSlide: number;
+  setSlide: Dispatch<SetStateAction<number>>;
+  slideQty: number;
 };
 
 export default function Slide({
@@ -14,8 +18,24 @@ export default function Slide({
   posterUrl,
   description,
   score,
+  currentSlide,
+  slideQty,
+  setSlide,
 }: SlideTypes) {
   const poster = posterUrl?.replace("'", "");
+
+  const isLastSlide = currentSlide === slideQty - 1;
+  const isFirstSlide = currentSlide === 0;
+
+  const moveSlideForward = () => {
+    if (isLastSlide) return;
+    setSlide(currentSlide + 1);
+  };
+
+  const moveSlideBack = () => {
+    if (isFirstSlide) return;
+    setSlide(currentSlide - 1);
+  };
 
   return (
     <div
@@ -24,7 +44,14 @@ export default function Slide({
     >
       <div className="w-full flex flex-col  items-center justify-center h-full backdrop-blur-[8px] backdrop-saturate-[1.8]">
         <div className="flex flex-row">
-          <button className="text-white self-center font-semibold h-[60px] w-[60px] text-[65px]">
+          <button
+            onClick={() => {
+              moveSlideBack();
+            }}
+            className={`${
+              isFirstSlide ? "invisible" : "block"
+            } text-white self-center font-semibold  text-[85px]`}
+          >
             {"<"}
           </button>
 
@@ -65,7 +92,14 @@ export default function Slide({
               </li>
             </ul>
           </div>
-          <button className="text-white h-[60px] w-[60px] self-center font-semibold text-[65px]">
+          <button
+            onClick={() => {
+              moveSlideForward();
+            }}
+            className={`${
+              isLastSlide ? "invisible" : "block"
+            } text-white self-center font-semibold  text-[85px]`}
+          >
             {">"}
           </button>
         </div>
