@@ -16,7 +16,7 @@ function App() {
     <main className="w-screen h-screen flex flex-col ">
       <Navbar />
       {isPending && (
-        <div className="text-2xl flex self-center ">
+        <div className="text-3xl text-white flex self-center ">
           <p>Loading...</p>
         </div>
       )}

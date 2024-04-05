@@ -1,8 +1,11 @@
+import Score from "./score";
+
 type SlideTypes = {
   title: string;
   backgroundUrl?: string;
   description: string;
   posterUrl?: string;
+  score: number;
 };
 
 export default function Slide({
@@ -10,8 +13,10 @@ export default function Slide({
   backgroundUrl,
   posterUrl,
   description,
+  score,
 }: SlideTypes) {
-  const fixedPoster = posterUrl?.replace("'", "");
+  const poster = posterUrl?.replace("'", "");
+
   return (
     <div
       style={{ backgroundImage: `url(${backgroundUrl})` }}
@@ -23,11 +28,12 @@ export default function Slide({
             {"<"}
           </button>
 
-          <div className="h-[530px] w-[299px] object-cover ml-20 z-20">
-            <img className="rounded" src={fixedPoster}></img>
+          <div className="h-[530px] relative w-[299px] object-cover ml-20 z-20">
+            <Score score={score} />
+            <img className="rounded" src={poster}></img>
           </div>
-          <div className="flex items-center justify-start flex-col">
-            <div className="-left-[90px] top-4 relative bg-[#D9D9D9] p-4 mb-10 rounded border-[6px] border-[#554F95] h-[340px] bg-opacity-[60%] mx-20">
+          <div className="flex relative -left-[85px] items-center justify-start flex-col">
+            <div className=" top-4 relative bg-[#D9D9D9] p-4 mb-10 rounded border-[6px] border-[#554F95] h-[340px] bg-opacity-[60%] mx-20">
               <h2 className="h-lg text-[#181818] leading-[60px] text-[69px] max-w-[700px] tracking-tighter">
                 {title}
               </h2>
@@ -36,14 +42,15 @@ export default function Slide({
                 {description}
               </p>
             </div>
-            <ul className="text-white -left-[90px] items-center justify-center  relative flex gap-4">
+            <ul className="text-white items-center justify-center  flex gap-4">
               <li className="flex items-center justify-center ">
                 <a
                   className="flex gap-2 flex-col text-lg items-center justify-center"
                   href=""
+                  target="_blank"
                 >
                   <div className="h-[50px] w-[50px] bg-dreamview"></div>
-                  <span>Ver trailer</span>
+                  <span className="drop-shadow-xl">Ver trailer</span>
                 </a>
               </li>
               <li className="flex items-center justify-center ">
@@ -53,7 +60,7 @@ export default function Slide({
                   href=""
                 >
                   <div className="h-[50px] w-[50px] bg-dreamview"></div>
-                  <span>Dejar reseña</span>
+                  <span className="drop-shadow-xl">Dejar reseña</span>
                 </a>
               </li>
             </ul>
