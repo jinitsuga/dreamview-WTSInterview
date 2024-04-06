@@ -1,4 +1,4 @@
-import filledStar from "../../../public/starfilled.png";
+import filledStar from "/starfilled.png";
 
 export default function Score({ score }: { score: number }) {
   const textScore = score.toString();

@@ -1,5 +1,7 @@
 import { SetStateAction, Dispatch } from "react";
 import Score from "./score";
+import playIcon from "/play-logo.png";
+import starIcon from "/starfilled.png";
 
 type SlideTypes = {
   title: string;
@@ -80,7 +82,7 @@ export default function Slide({
                 {description}
               </p>
             </div>
-            <h2 className="xl:hidden text-white text-[32px] max-w-[275px] tracking-tighter">
+            <h2 className="xl:hidden text-white text-[32px] min-h-[96px] max-w-[275px] tracking-tighter">
               {title}
             </h2>
             <ul className="text-white items-center justify-center  flex gap-4">
@@ -90,7 +92,14 @@ export default function Slide({
                   href="https://www.youtube.com/watch?v=V-mugKDQDlg&t=1s&ab_channel=PrimeVideo"
                   target="_blank"
                 >
-                  <div className="h-[50px] w-[50px] bg-dreamview"></div>
+                  <div className="h-[50px] flex items-center justify-center w-[50px] bg-dreamview">
+                    <img
+                      src={playIcon}
+                      height={35}
+                      width={35}
+                      alt="play icon"
+                    />
+                  </div>
                   <span className="drop-shadow-xl">Ver trailer</span>
                 </a>
               </li>
@@ -100,7 +109,14 @@ export default function Slide({
                   className="flex gap-2 flex-col text-lg items-center justify-center"
                   href="#"
                 >
-                  <div className="h-[50px] w-[50px] bg-dreamview"></div>
+                  <div className="h-[50px] flex items-center justify-center w-[50px] bg-dreamview">
+                    <img
+                      src={starIcon}
+                      width={35}
+                      height={35}
+                      alt="star icon"
+                    />
+                  </div>
                   <span className="drop-shadow-xl">Dejar reseña</span>
                 </a>
               </li>
