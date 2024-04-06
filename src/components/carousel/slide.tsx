@@ -38,9 +38,9 @@ export default function Slide({
   return (
     <div
       style={{ backgroundImage: `url(${backgroundUrl})` }}
-      className={`object-scale-down flex flex-col w-full h-[690px] bg-cover  max-h-[700px]`}
+      className={`object-scale-down flex flex-col w-full h-[790px] bg-cover`}
     >
-      <div className="w-full flex xl:flex-col  items-center justify-center h-full backdrop-blur-[8px] backdrop-saturate-[1.8]">
+      <div className="w-full flex xl:flex-col  items-center justify-center min-h-full backdrop-blur-[8px] backdrop-saturate-[1.8]">
         <button
           onClick={() => {
             moveSlideBack();
@@ -63,7 +63,7 @@ export default function Slide({
             {"<"}
           </button>
 
-          <div className=" relative -mb-20 object-cover xl:ml-20 z-20">
+          <div className=" relative  object-cover xl:ml-20 z-20">
             <Score score={score} />
             <img
               className="rounded w-auto max-h-[530px] "
@@ -80,7 +80,7 @@ export default function Slide({
                 {description}
               </p>
             </div>
-            <h2 className="xl:hidden text-white text-[32px] max-w-[225px] tracking-tighter">
+            <h2 className="xl:hidden text-white text-[32px] max-w-[275px] tracking-tighter">
               {title}
             </h2>
             <ul className="text-white items-center justify-center  flex gap-4">
