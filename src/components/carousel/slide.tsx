@@ -89,13 +89,13 @@ export default function Slide({
               {title}
             </h2>
             <ul className="text-white items-center justify-center  flex gap-4">
-              <li className="flex items-center justify-center ">
+              <li className="flex items-center justify-center hover:text-dreamview">
                 <a
                   className="flex gap-2 flex-col text-lg items-center justify-center"
                   href="https://www.youtube.com/watch?v=V-mugKDQDlg&t=1s&ab_channel=PrimeVideo"
                   target="_blank"
                 >
-                  <div className="h-[50px] flex items-center justify-center w-[50px] bg-dreamview">
+                  <div className="h-[50px] flex items-center justify-center w-[50px] bg-dreamview ">
                     <img
                       src={playIcon}
                       height={35}
@@ -106,7 +106,7 @@ export default function Slide({
                   <span className="drop-shadow-xl">Ver trailer</span>
                 </a>
               </li>
-              <li className="flex items-center justify-center ">
+              <li className="flex items-center justify-center hover:text-dreamview">
                 {" "}
                 <button
                   className="flex gap-2 flex-col text-lg items-center justify-center"

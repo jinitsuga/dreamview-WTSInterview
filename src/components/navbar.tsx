@@ -17,23 +17,23 @@ export default function Navbar() {
       <nav className="flex items-center">
         <ul className=" gap-4 items-center text-[18px] text-white hidden lg:flex">
           <li>
-            <button className="text-white">
-              <a href="#carousel">Destacadas</a>
+            <button className="text-white hover:text-dreamview">
+              <a href="#carousel ">Destacadas</a>
             </button>
           </li>
           <li>
-            <button className="text-white">
+            <button className="text-white hover:text-dreamview">
               <a href="#listing">Cartelera</a>
             </button>
           </li>
           <li>
-            <button className="py-2 bg-[#554F95] rounded w-[185px]">
+            <button className="py-2 bg-[#554F95] rounded w-[185px] hover:scale-110 hover:text-black">
               Comprar ticket
             </button>
           </li>
         </ul>
         <button
-          className="flex gap-2 flex-col text-lg items-center justify-center"
+          className="flex lg:hidden gap-2 flex-col text-lg items-center justify-center"
           onClick={(e) => {
             e.preventDefault();
             setShowModal(true);

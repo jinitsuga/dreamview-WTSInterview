@@ -13,7 +13,7 @@ export default function MovieCard({ title, posterUrl }: CardProps) {
         className="w-[160px] lg:h-[250px] h-[220px] rounded"
         src={posterUrl}
       ></img>
-      <button className="bg-dreamview text-white text-sm min-h-[25px]  rounded-b-lg w-[160px]">
+      <button className="bg-dreamview text-white text-sm min-h-[25px] rounded-b-lg w-[160px] hover:text-black">
         Comprar ticket
       </button>
     </div>

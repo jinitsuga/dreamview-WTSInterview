@@ -137,7 +137,7 @@ export default function ReviewModal({
                     setShowThanks(true);
                   }
                 }}
-                className="text-semibold text-xl p-4 border-2 border-dreamview rounded px-20"
+                className="text-semibold text-xl p-4 border-2 border-dreamview rounded px-20 hover:text-dreamview"
               >
                 Finalizar
               </button>
