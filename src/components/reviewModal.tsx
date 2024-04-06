@@ -58,8 +58,6 @@ export default function ReviewModal({
     }
   }, [showModal]);
 
-  console.log(formData);
-
   const resetForm = () => {
     setFormData({ name: "", email: "", review: "", movie: formData.movie });
   };
