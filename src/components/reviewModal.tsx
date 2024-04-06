@@ -18,6 +18,7 @@ export type ReviewFormData = {
   review: string;
 };
 
+// Ideally, server side validation also happens since client-side validation can be altered
 const validateForm = (form: ReviewFormData) => {
   const { name, email, review } = form;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -58,10 +59,8 @@ export default function ReviewModal({
   console.log(formData);
 
   const resetForm = () => {
-    setFormData({ movie: "", name: "", email: "", review: "" });
+    setFormData({ name: "", email: "", review: "", movie: formData.movie });
   };
-
-  // Ideally, server side validation also happens, since client-side val can be altered
 
   return (
     <dialog
@@ -69,8 +68,23 @@ export default function ReviewModal({
       onCancel={() => closeModal(false)}
       ref={ref}
     >
-      <h2 className="ml-8 font-semibold text-[32px]">Reseña de películas</h2>
-      <p className="ml-8 mb-8">Deja tu opinión</p>
+      <div className="w-full flex justify-between items-center">
+        <div>
+          <h2 className="ml-8 font-semibold text-[32px]">
+            Reseña de películas
+          </h2>
+          <p className="ml-8 mb-8">Deja tu opinión</p>
+        </div>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            closeModal(false);
+          }}
+          className="text-6xl self-start"
+        >
+          ✕
+        </button>
+      </div>
 
       <form className=" flex flex-col gap-4 items-center justify-center">
         <SelectInput
