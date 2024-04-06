@@ -9,7 +9,7 @@ export default function Listings({ movies }: { movies: Movie[] }) {
   return (
     <section className=" flex flex-col py-8 xl:px-8 max-w-[1250px] items-center self-center gap-4 justify-center ">
       <h2
-        id="listing-title"
+        id="listing"
         className="text-white text-4xl mb-4 text-center self-start "
       >
         En cartelera

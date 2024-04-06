@@ -13,7 +13,7 @@ export default function Navbar() {
           </li>
           <li>
             <button className="text-white">
-              <a href="#listing-title">Cartelera</a>
+              <a href="#listing">Cartelera</a>
             </button>
           </li>
           <li>

@@ -68,6 +68,7 @@ export function TextInput({
   onChange,
   formData,
   placeholder,
+  value,
 }: Inputs) {
   return (
     <label className="bg-[#282828]" htmlFor={label}>
@@ -77,6 +78,7 @@ export function TextInput({
         </p>
         <div>
           <input
+            value={value}
             placeholder={placeholder}
             className="text-white p-2 text-bold text-lg bg-[#282828] w-full"
             id={label}
@@ -94,6 +96,7 @@ export function TextAreaInput({
   onChange,
   formData,
   placeholder,
+  value,
 }: Inputs) {
   return (
     <label className="bg-[#282828]" htmlFor={label}>
@@ -103,6 +106,7 @@ export function TextAreaInput({
         </p>
         <div>
           <textarea
+            value={value}
             placeholder={placeholder}
             className="text-white p-2 text-bold text-lg bg-[#282828] w-full"
             id={label}
