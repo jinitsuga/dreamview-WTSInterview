@@ -7,9 +7,7 @@ type CarouselProps = {
 };
 
 export default function Carousel({ topMovies }: CarouselProps) {
-  const [shownSlide, setShownSlide] = useState<number>(2);
-
-  const imgsUrl = import.meta.env.VITE_IMG_URL;
+  const [shownSlide, setShownSlide] = useState<number>(0);
 
   const slides = topMovies.map((movie, id) => (
     <Slide
@@ -18,10 +16,10 @@ export default function Carousel({ topMovies }: CarouselProps) {
       slideQty={topMovies.length}
       key={id}
       title={movie.title}
-      description={movie.overview}
-      backgroundUrl={`${imgsUrl}${movie.backdrop_path}`}
-      posterUrl={`${imgsUrl}${movie.poster_path}`}
-      score={movie.vote_average}
+      description={movie.description}
+      backgroundUrl={movie.poster}
+      posterUrl={movie.poster}
+      score={movie.rating}
     />
   ));
   return <section>{slides[shownSlide]}</section>;

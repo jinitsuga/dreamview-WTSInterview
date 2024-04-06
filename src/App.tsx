@@ -1,8 +1,10 @@
 import Navbar from "./components/navbar";
 import Carousel from "./components/carousel/carousel";
+import Listings from "./components/movieListings/listings";
 import { useQuery } from "@tanstack/react-query";
 import { getMovies } from "../helpers/movies";
 import "./App.css";
+import { Movie } from "./types/types";
 
 function App() {
   const { isPending, isError, data, error } = useQuery({
@@ -10,10 +12,11 @@ function App() {
     queryFn: getMovies,
   });
 
-  const topMovies = data && data.results.slice(0, 3);
+  const topMovies =
+    data && data.movies.filter((movie: Movie) => movie.featured == true);
 
   return (
-    <main className="w-screen h-screen flex flex-col ">
+    <main className="min-w-screen min-h-screen flex flex-col ">
       <Navbar />
       {isPending && (
         <div className="text-3xl text-white flex self-center ">
@@ -23,12 +26,17 @@ function App() {
       {isError && (
         <div>
           <p>
-            There was an error fetching information about our movies. \n $
+            There was an error fetching information about the movies :( \n $
             {error.message}
           </p>
         </div>
       )}
-      {data && <Carousel topMovies={topMovies} />}
+      {data && (
+        <>
+          <Carousel topMovies={topMovies} />
+          <Listings movies={data.movies} />
+        </>
+      )}
     </main>
   );
 }

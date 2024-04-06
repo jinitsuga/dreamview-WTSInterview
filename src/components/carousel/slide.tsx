@@ -22,8 +22,6 @@ export default function Slide({
   slideQty,
   setSlide,
 }: SlideTypes) {
-  const poster = posterUrl?.replace("'", "");
-
   const isLastSlide = currentSlide === slideQty - 1;
   const isFirstSlide = currentSlide === 0;
 
@@ -42,25 +40,38 @@ export default function Slide({
       style={{ backgroundImage: `url(${backgroundUrl})` }}
       className={`object-scale-down flex flex-col w-full h-[690px] bg-cover  max-h-[700px]`}
     >
-      <div className="w-full flex flex-col  items-center justify-center h-full backdrop-blur-[8px] backdrop-saturate-[1.8]">
-        <div className="flex flex-row">
+      <div className="w-full flex xl:flex-col  items-center justify-center h-full backdrop-blur-[8px] backdrop-saturate-[1.8]">
+        <button
+          onClick={() => {
+            moveSlideBack();
+          }}
+          className={`${
+            isFirstSlide ? "invisible" : "block"
+          } text-white self-center font-semibold xl:hidden  text-[85px]`}
+        >
+          {"<"}
+        </button>
+        <div className="flex lg:mx-20 mx-2 xl:mx-0 flex-col xl:flex-row  xl:max-w-[1250px]">
           <button
             onClick={() => {
               moveSlideBack();
             }}
             className={`${
               isFirstSlide ? "invisible" : "block"
-            } text-white self-center font-semibold  text-[85px]`}
+            } text-white self-center font-semibold hidden xl:block  text-[85px]`}
           >
             {"<"}
           </button>
 
-          <div className="h-[530px] relative w-[299px] object-cover ml-20 z-20">
+          <div className=" relative -mb-20 object-cover xl:ml-20 z-20">
             <Score score={score} />
-            <img className="rounded" src={poster}></img>
+            <img
+              className="rounded w-auto max-h-[530px] "
+              src={posterUrl}
+            ></img>
           </div>
-          <div className="flex relative -left-[85px] items-center justify-start flex-col">
-            <div className=" top-4 relative bg-[#D9D9D9] p-4 mb-10 rounded border-[6px] border-[#554F95] h-[340px] bg-opacity-[60%] mx-20">
+          <div className="flex relative xl:-left-[85px] items-center justify-start flex-col">
+            <div className="hidden xl:block top-4 relative bg-[#D9D9D9] p-4 mb-10 rounded border-[6px] border-[#554F95] h-[340px] bg-opacity-[60%] mx-20">
               <h2 className="h-lg text-[#181818] leading-[60px] text-[69px] max-w-[700px] tracking-tighter">
                 {title}
               </h2>
@@ -69,11 +80,14 @@ export default function Slide({
                 {description}
               </p>
             </div>
+            <h2 className="xl:hidden text-white text-[32px] max-w-[225px] tracking-tighter">
+              {title}
+            </h2>
             <ul className="text-white items-center justify-center  flex gap-4">
               <li className="flex items-center justify-center ">
                 <a
                   className="flex gap-2 flex-col text-lg items-center justify-center"
-                  href=""
+                  href="https://www.youtube.com/watch?v=V-mugKDQDlg&t=1s&ab_channel=PrimeVideo"
                   target="_blank"
                 >
                   <div className="h-[50px] w-[50px] bg-dreamview"></div>
@@ -84,7 +98,7 @@ export default function Slide({
                 {" "}
                 <a
                   className="flex gap-2 flex-col text-lg items-center justify-center"
-                  href=""
+                  href="#"
                 >
                   <div className="h-[50px] w-[50px] bg-dreamview"></div>
                   <span className="drop-shadow-xl">Dejar reseña</span>
@@ -98,11 +112,21 @@ export default function Slide({
             }}
             className={`${
               isLastSlide ? "invisible" : "block"
-            } text-white self-center font-semibold  text-[85px]`}
+            } text-white self-center font-semibold hidden xl:block  text-[85px]`}
           >
             {">"}
           </button>
         </div>
+        <button
+          onClick={() => {
+            moveSlideForward();
+          }}
+          className={`${
+            isLastSlide ? "invisible" : "block"
+          } text-white self-center font-semibold xl:hidden  text-[85px]`}
+        >
+          {">"}
+        </button>
       </div>
     </div>
   );
