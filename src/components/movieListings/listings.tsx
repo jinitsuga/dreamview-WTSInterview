@@ -14,7 +14,7 @@ export default function Listings({ movies }: { movies: Movie[] }) {
       >
         En cartelera
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3   lg:grid-cols-5 xl:gap-x-4 gap-x-1 gap-y-10 items-center justify-center">
+      <div className="grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-3   lg:grid-cols-5 xl:gap-x-4 gap-x-1 gap-y-10 items-center justify-center">
         {movieCards}
       </div>
     </section>

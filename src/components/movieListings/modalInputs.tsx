@@ -43,7 +43,7 @@ export function SelectInput({
 
   return (
     <label className="bg-[#282828]" htmlFor={label}>
-      <div className="flex relative flex-col items-start justify-center p-2 border-2 w-[375px] border-dreamview rounded">
+      <div className="flex relative flex-col items-start justify-center p-2 border-2  w-[325px] lg:w-[375px] border-dreamview rounded">
         <p className="text-sm relative bottom-5 bg-[#282828] pr-6 pl-2">
           {labelText}
         </p>
@@ -72,7 +72,7 @@ export function TextInput({
 }: Inputs) {
   return (
     <label className="bg-[#282828]" htmlFor={label}>
-      <div className="flex relative flex-col items-start justify-center p-2 border-2 w-[375px] border-dreamview rounded">
+      <div className="flex relative flex-col items-start justify-center p-2 border-2  w-[325px] lg:w-[375px] border-dreamview rounded">
         <p className="text-sm relative bottom-5 bg-[#282828] pr-6 pl-2">
           {labelText}
         </p>
@@ -100,7 +100,7 @@ export function TextAreaInput({
 }: Inputs) {
   return (
     <label className="bg-[#282828]" htmlFor={label}>
-      <div className="flex relative flex-col items-start justify-center p-2 border-2 w-[375px] border-dreamview rounded">
+      <div className="flex relative flex-col items-start justify-center p-2 border-2  w-[325px] lg:w-[375px] border-dreamview rounded">
         <p className="text-sm relative bottom-5 bg-[#282828] pr-6 pl-2">
           {labelText}
         </p>

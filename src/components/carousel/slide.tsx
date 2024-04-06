@@ -115,7 +115,7 @@ export default function Slide({
                     setShowModal(true);
                   }}
                 >
-                  <div className="h-[50px] flex items-center justify-center w-[50px] bg-dreamview">
+                  <div className="h-[50px] rounded flex items-center justify-center w-[55px] bg-dreamview">
                     <img
                       src={starIcon}
                       width={35}
