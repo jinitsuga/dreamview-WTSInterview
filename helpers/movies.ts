@@ -1,5 +1,3 @@
-const imgsUrl = import.meta.env.VITE_IMG_URL;
-
 export async function getMovies() {
   try {
     const response = await fetch(
@@ -11,6 +9,7 @@ export async function getMovies() {
   }
 }
 
-export function getImagePath(path: string) {
-  return `${imgsUrl}${path}`.replace("'", "");
-}
+// Used it to edit some path strings (no longer being used)
+// export function getImagePath(path: string) {
+//   return `${imgsUrl}${path}`.replace("'", "");
+// }

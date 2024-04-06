@@ -20,7 +20,7 @@ function App() {
       <Navbar />
       {isPending && (
         <div className="text-3xl text-white flex self-center ">
-          <p>Loading...</p>
+          <p>Cargando pelis...</p>
         </div>
       )}
       {isError && (

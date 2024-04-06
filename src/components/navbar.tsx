@@ -7,10 +7,14 @@ export default function Navbar() {
       <nav className="hidden lg:block">
         <ul className="flex gap-4 items-center text-[18px] text-white">
           <li>
-            <button className="text-white">Destacadas</button>
+            <button className="text-white">
+              <a href="#carousel">Destacadas</a>
+            </button>
           </li>
           <li>
-            <button className="text-white">Cartelera</button>
+            <button className="text-white">
+              <a href="#listing-title">Cartelera</a>
+            </button>
           </li>
           <li>
             <button className="py-2 bg-[#554F95] rounded w-[185px]">

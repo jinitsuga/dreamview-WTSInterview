@@ -1,7 +1,8 @@
-import { SetStateAction, Dispatch } from "react";
+import { SetStateAction, Dispatch, useState } from "react";
 import Score from "./score";
 import playIcon from "/play-logo.png";
 import starIcon from "/starfilled.png";
+import ReviewModal from "../reviewModal";
 
 type SlideTypes = {
   title: string;
@@ -24,6 +25,8 @@ export default function Slide({
   slideQty,
   setSlide,
 }: SlideTypes) {
+  const [showModal, setShowModal] = useState<boolean>(false); // controlls showing of modal to leave movie review
+
   const isLastSlide = currentSlide === slideQty - 1;
   const isFirstSlide = currentSlide === 0;
 
@@ -105,9 +108,12 @@ export default function Slide({
               </li>
               <li className="flex items-center justify-center ">
                 {" "}
-                <a
+                <button
                   className="flex gap-2 flex-col text-lg items-center justify-center"
-                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowModal(true);
+                  }}
                 >
                   <div className="h-[50px] flex items-center justify-center w-[50px] bg-dreamview">
                     <img
@@ -118,9 +124,16 @@ export default function Slide({
                     />
                   </div>
                   <span className="drop-shadow-xl">Dejar reseña</span>
-                </a>
+                </button>
               </li>
             </ul>
+            {showModal && (
+              <ReviewModal
+                movieTitle={title}
+                showModal={showModal}
+                closeModal={setShowModal}
+              />
+            )}
           </div>
           <button
             onClick={() => {

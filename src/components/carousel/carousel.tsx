@@ -22,5 +22,5 @@ export default function Carousel({ topMovies }: CarouselProps) {
       score={movie.rating}
     />
   ));
-  return <section>{slides[shownSlide]}</section>;
+  return <section id="carousel">{slides[shownSlide]}</section>;
 }
