@@ -1,5 +1,5 @@
 ## Quick Cinema Project for a Wunderman's technical challenge
-
+#### Built in 2 days
 ### Tech used:
 - React + TypeScript + Vite
 - TailwindCSS for styling
