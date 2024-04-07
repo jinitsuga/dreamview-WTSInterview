@@ -1,4 +1,4 @@
-## Quick Cinema Project for a company's technical challenge
+## Quick Cinema Project for a Wunderman's technical challenge
 
 ### Tech used:
 - React + TypeScript + Vite
