@@ -27,6 +27,8 @@ export default function Slide({
 }: SlideTypes) {
   const [showModal, setShowModal] = useState<boolean>(false); // controlls showing of modal to leave movie review
 
+  // I would ideally refactor this component, it's quite messy.
+
   const isLastSlide = currentSlide === slideQty - 1;
   const isFirstSlide = currentSlide === 0;
 

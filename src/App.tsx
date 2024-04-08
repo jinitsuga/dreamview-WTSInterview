@@ -19,12 +19,12 @@ function App() {
     <main className="min-w-screen min-h-screen flex flex-col ">
       <Navbar />
       {isPending && (
-        <div className="text-3xl text-white flex self-center ">
+        <div className="text-3xl text-white flex self-center">
           <p>Cargando pelis...</p>
         </div>
       )}
       {isError && (
-        <div>
+        <div className="text-3xl text-white flex self-center">
           <p>
             There was an error fetching information about the movies :( \n $
             {error.message}

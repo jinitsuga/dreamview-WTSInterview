@@ -26,11 +26,11 @@ export function SelectInput({
   });
 
   if (error) {
-    return <p>Hubo un error al cargar las películas.</p>;
+    return <p className="text-white">Hubo un error al cargar las películas.</p>;
   }
 
   if (isPending) {
-    return <p>Cargando pelis...</p>;
+    return <p className="text-white">Cargando pelis...</p>;
   }
 
   const movieList =
